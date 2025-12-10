@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/1b44bdc2f20e4d159cb8163c0bfee96c/artifacts
+end_time: 1765324114729
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 1b44bdc2f20e4d159cb8163c0bfee96c
+run_name: Challenger_RandomForest
+run_uuid: 1b44bdc2f20e4d159cb8163c0bfee96c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765323974175
+status: 3
+tags: []
+user_id: '52358965'

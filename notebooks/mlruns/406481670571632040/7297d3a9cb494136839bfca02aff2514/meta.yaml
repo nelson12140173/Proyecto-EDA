@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/7297d3a9cb494136839bfca02aff2514/artifacts
+end_time: 1765326338974
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 7297d3a9cb494136839bfca02aff2514
+run_name: Champion_Run
+run_uuid: 7297d3a9cb494136839bfca02aff2514
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765326338924
+status: 4
+tags: []
+user_id: '52358965'

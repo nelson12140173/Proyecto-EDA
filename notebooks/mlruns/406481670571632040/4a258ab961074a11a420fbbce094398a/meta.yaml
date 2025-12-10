@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/4a258ab961074a11a420fbbce094398a/artifacts
+end_time: 1765324133766
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 4a258ab961074a11a420fbbce094398a
+run_name: Champion_GradientBoosting
+run_uuid: 4a258ab961074a11a420fbbce094398a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765324129146
+status: 3
+tags: []
+user_id: '52358965'

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1765327413049
+current_stage: None
+description: null
+last_updated_timestamp: 1765327413049
+name: ChampionModel
+run_id: 81b9fc599f584cb2aec7e94c6c83a085
+run_link: null
+source: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/81b9fc599f584cb2aec7e94c6c83a085/artifacts/champion_model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/81b9fc599f584cb2aec7e94c6c83a085/artifacts/champion_model
+user_id: null
+version: 2

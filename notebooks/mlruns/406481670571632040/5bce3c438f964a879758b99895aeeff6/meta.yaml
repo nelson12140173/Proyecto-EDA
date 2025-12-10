@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/5bce3c438f964a879758b99895aeeff6/artifacts
+end_time: 1765323955971
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 5bce3c438f964a879758b99895aeeff6
+run_name: Challenger_Ridge
+run_uuid: 5bce3c438f964a879758b99895aeeff6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765323941238
+status: 3
+tags: []
+user_id: '52358965'

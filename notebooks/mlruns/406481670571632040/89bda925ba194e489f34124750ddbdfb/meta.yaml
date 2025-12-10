@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/89bda925ba194e489f34124750ddbdfb/artifacts
+end_time: 1765323974155
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 89bda925ba194e489f34124750ddbdfb
+run_name: Challenger_Lasso
+run_uuid: 89bda925ba194e489f34124750ddbdfb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765323955987
+status: 3
+tags: []
+user_id: '52358965'

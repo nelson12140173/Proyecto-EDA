@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/40718d5aa7e149aaa6397a89e5d34212/artifacts
+end_time: 1765324128946
+entry_point_name: ''
+experiment_id: '406481670571632040'
+lifecycle_stage: active
+run_id: 40718d5aa7e149aaa6397a89e5d34212
+run_name: Challenger_GradientBoosting
+run_uuid: 40718d5aa7e149aaa6397a89e5d34212
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765324114729
+status: 3
+tags: []
+user_id: '52358965'

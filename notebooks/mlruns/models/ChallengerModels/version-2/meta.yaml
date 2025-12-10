@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1765323955939
+current_stage: None
+description: null
+last_updated_timestamp: 1765323955939
+name: ChallengerModels
+run_id: 5bce3c438f964a879758b99895aeeff6
+run_link: null
+source: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/5bce3c438f964a879758b99895aeeff6/artifacts/challenger_model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/52358965/Proyecto/notebooks/mlruns/406481670571632040/5bce3c438f964a879758b99895aeeff6/artifacts/challenger_model
+user_id: null
+version: 2
