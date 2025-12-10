@@ -1,0 +1,8 @@
+stages:
+  train:
+    cmd: python src/model_training.py
+    deps:
+      - data/raw/Base.xlsx
+      - src/model_training.py
+    outs:
+      - models/final_model_pipeline.pkl

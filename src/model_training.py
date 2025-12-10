@@ -29,7 +29,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 def _build_preprocessor(
     X: pd.DataFrame,
 ) -> Tuple[ColumnTransformer, pd.Index, pd.Index]:
-    """Construye el preprocesador como en el notebook 04."""
+    """Construye el preprocesador (numérico + categórico)."""
     num_features = X.select_dtypes(include=["int64", "float64"]).columns
     cat_features = X.select_dtypes(include=["object", "category"]).columns
 
@@ -78,6 +78,7 @@ def train_and_tune(
     """
     preprocessor, _, _ = _build_preprocessor(X)
 
+    # Usamos una partición tipo "time series": primeros 80% entrenan, 20% validan
     split_index = int(len(X) * 0.8)
     X_train, X_val = X.iloc[:split_index], X.iloc[split_index:]
     y_train, y_val = y.iloc[:split_index], y.iloc[split_index:]
@@ -98,15 +99,15 @@ def train_and_tune(
         "RandomForest": {
             "model": RandomForestRegressor(random_state=42),
             "params": {
-                "model__n_estimators": [100, 200, 300],
+                "model__n_estimators": [100, 200],
                 "model__max_depth": [5, 10, None],
             },
         },
         "GradientBoosting": {
             "model": GradientBoostingRegressor(random_state=42),
             "params": {
-                "model__n_estimators": [100, 200, 300],
-                "model__learning_rate": [0.05, 0.1, 0.2],
+                "model__n_estimators": [100, 200],
+                "model__learning_rate": [0.05, 0.1],
             },
         },
     }
@@ -115,6 +116,8 @@ def train_and_tune(
     tscv = TimeSeriesSplit(n_splits=3)
 
     for nombre, config in modelos.items():
+        print(f"\n=== Entrenando modelo: {nombre} ===")
+
         pipeline = Pipeline(
             steps=[
                 ("preprocessor", preprocessor),
@@ -132,11 +135,14 @@ def train_and_tune(
 
         grid.fit(X_train, y_train)
 
-        best_rmse = -grid.best_score_
+        best_rmse = -grid.best_score_  
         val_pred = grid.predict(X_val)
         rmse_val = float(
             np.sqrt(mean_squared_error(y_val, val_pred)),
         )
+
+        print(f"Mejor RMSE CV   : {best_rmse:.4f}")
+        print(f"RMSE validación : {rmse_val:.4f}")
 
         resultados.append(
             {
@@ -155,7 +161,12 @@ def train_and_tune(
     ganador = resultados_ordenados[0]
     best_model = ganador["best_estimator"]
 
-    # Entrenar modelo campeón con todos los datos
+    print("\n====================================")
+    print(f"Modelo ganador: {ganador['modelo']}")
+    print(f"RMSE validación: {ganador['rmse_validacion']}")
+    print("====================================")
+
+    # Entrenar modelo campeón con TODOS los datos
     best_model.fit(X, y)
 
     metrics = {
@@ -163,9 +174,31 @@ def train_and_tune(
         "rmse_cv": ganador["rmse_cv"],
     }
 
+    # Guardar el modelo final
     models_dir = Path("models")
     models_dir.mkdir(parents=True, exist_ok=True)
     output_path = models_dir / "final_model_pipeline.pkl"
     joblib.dump(best_model, output_path)
 
+    print("\nModelo FINAL guardado en models/final_model_pipeline.pkl")
+
     return best_model, metrics
+
+
+if __name__ == "__main__":
+    # 1. Cargar datos originales
+    df = pd.read_excel("data/raw/Base.xlsx")
+
+    # 2. Definir variable objetivo y predictoras
+    #    Objetivo: columna 'Unidades'
+    y = df["Unidades"]
+    #    Features: todas excepto 'Unidades'
+    X = df.drop(columns=["Unidades"])
+
+    # 3. Entrenar y guardar el modelo
+    model, metrics = train_and_tune(X, y)
+
+    print("\nEntrenamiento completado.")
+    print("Métricas:", metrics)
+    print("Modelo guardado en models/final_model_pipeline.pkl")
+

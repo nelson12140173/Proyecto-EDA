@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/model_training.py
+    deps:
+    - path: data/raw/Base.xlsx
+      hash: md5
+      md5: 6326464ca9a126209cbecbce941136fd
+      size: 125945
+    - path: src/model_training.py
+      hash: md5
+      md5: 4097d31f9c22859e6fa0f1b5b26296ad
+      size: 6231
+    outs:
+    - path: models/final_model_pipeline.pkl
+      hash: md5
+      md5: f51f654c6bfe6718ebd7b774a2c2abae
+      size: 149899
