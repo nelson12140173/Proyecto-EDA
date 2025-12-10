@@ -1,0 +1,9 @@
+2025-12-09 21:55:27,983 - INFO - \U0001f680 Inicio del pipeline MLOps
+2025-12-09 21:55:27,983 - INFO - 1\ufe0f\u20e3 EDA y carga de datos base
+2025-12-09 21:55:30,093 - INFO - 2\ufe0f\u20e3 Exploración de características
+2025-12-09 21:55:30,093 - INFO - 3\ufe0f\u20e3 Creación de features
+2025-12-09 21:55:30,093 - INFO - 4\ufe0f\u20e3 Entrenamiento y tuning del modelo
+2025-12-09 21:55:51,142 - INFO - \U0001f4ca Métricas finales: {'rmse_validacion': 0.8115105291306153, 'rmse_cv': 0.895378155929123}
+2025-12-09 21:55:51,142 - INFO - 5\ufe0f\u20e3 Inferencias sobre dataset de testing
+2025-12-09 21:55:51,629 - INFO - Predicciones guardadas en: reports\predicciones_testing.csv
+2025-12-09 21:55:51,629 - INFO - \U0001f389 Pipeline ejecutado exitosamente

@@ -1,0 +1,5 @@
+2025-12-09 21:45:30,644 - INFO - \U0001f680 Inicio del pipeline MLOps
+2025-12-09 21:45:30,645 - INFO - 1\ufe0f\u20e3 EDA y carga de datos base
+2025-12-09 21:45:31,593 - INFO - 2\ufe0f\u20e3 Exploración de características
+2025-12-09 21:45:31,593 - INFO - 3\ufe0f\u20e3 Creación de features
+2025-12-09 21:45:31,593 - ERROR - \u274c Error durante la ejecución del pipeline: No se encontró la columna 'Valores' en el dataset.
