@@ -1,8 +1,25 @@
 stages:
+  load_data:
+    cmd: python src/load_data.py
+    deps:
+      - data/raw/Base.xlsx
+      - src/load_data.py
+    outs:
+      - data/processed/data_clean.csv
+
   train:
     cmd: python src/model_training.py
     deps:
-      - data/raw/Base.xlsx
+      - data/processed/data_clean.csv
       - src/model_training.py
     outs:
       - models/final_model_pipeline.pkl
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - data/processed/data_clean.csv
+      - models/final_model_pipeline.pkl
+      - src/evaluate.py
+    outs:
+      - reports/metrics.json

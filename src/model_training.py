@@ -186,19 +186,14 @@ def train_and_tune(
 
 
 if __name__ == "__main__":
-    # 1. Cargar datos originales
-    df = pd.read_excel("data/raw/Base.xlsx")
+    """Punto de entrada del script de entrenamiento."""
+    df = pd.read_csv("data/processed/data_clean.csv")
 
-    # 2. Definir variable objetivo y predictoras
-    #    Objetivo: columna 'Unidades'
     y = df["Unidades"]
-    #    Features: todas excepto 'Unidades'
     X = df.drop(columns=["Unidades"])
 
-    # 3. Entrenar y guardar el modelo
     model, metrics = train_and_tune(X, y)
 
     print("\nEntrenamiento completado.")
     print("Métricas:", metrics)
     print("Modelo guardado en models/final_model_pipeline.pkl")
-

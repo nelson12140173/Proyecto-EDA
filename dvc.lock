@@ -3,16 +3,52 @@ stages:
   train:
     cmd: python src/model_training.py
     deps:
-    - path: data/raw/Base.xlsx
+    - path: data/processed/data_clean.csv
       hash: md5
-      md5: 6326464ca9a126209cbecbce941136fd
-      size: 125945
+      md5: 3e365fdcd12a2077a4bcd70ca997f0bb
+      size: 181368
     - path: src/model_training.py
       hash: md5
-      md5: 4097d31f9c22859e6fa0f1b5b26296ad
-      size: 6231
+      md5: 5d0229de2b370f13f1623a62311391d2
+      size: 6088
     outs:
     - path: models/final_model_pipeline.pkl
       hash: md5
       md5: f51f654c6bfe6718ebd7b774a2c2abae
       size: 149899
+  load_data:
+    cmd: python src/load_data.py
+    deps:
+    - path: data/raw/Base.xlsx
+      hash: md5
+      md5: 6326464ca9a126209cbecbce941136fd
+      size: 125945
+    - path: src/load_data.py
+      hash: md5
+      md5: 34d4ef18437c91295092abe080f3985b
+      size: 505
+    outs:
+    - path: data/processed/data_clean.csv
+      hash: md5
+      md5: 3e365fdcd12a2077a4bcd70ca997f0bb
+      size: 181368
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed/data_clean.csv
+      hash: md5
+      md5: 3e365fdcd12a2077a4bcd70ca997f0bb
+      size: 181368
+    - path: models/final_model_pipeline.pkl
+      hash: md5
+      md5: f51f654c6bfe6718ebd7b774a2c2abae
+      size: 149899
+    - path: src/evaluate.py
+      hash: md5
+      md5: 30d76bbc48e622efef93cf1110afdf3a
+      size: 958
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: aeb5c4aa2c866bf03b949f194d890288
+      size: 36
